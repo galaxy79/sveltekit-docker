@@ -27,12 +27,16 @@ npm run dev -- --open
 
 ## Building
 
-To create a production version of your app:
+To create a production version of your app using docker:
 
 ```bash
-npm run build
+docker build --pull --rm -f "Dockerfile" -t sveltekitdocker:latest "." 
 ```
 
-You can preview the production build with `npm run preview`.
+## Run Docker Image
+
+```bash
+docker run --rm -d -p 8080:8080/tcp sveltekitdocker:latest 
+```
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
